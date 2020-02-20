@@ -1,0 +1,60 @@
+#header{
+    background-color: #3d7068;
+    height: 20%;
+    min-height: 80px;
+    width: 100%;
+
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: 80px;
+    justify-content: space-between;
+
+    
+
+    
+}
+
+#logo{
+    height: 55px;
+    width: 125px;
+    background-color: red;
+    margin: 15px;
+}
+
+#login{
+
+    height: 55px;
+    width: 125px;
+    background-color:blue;
+    margin: 15px;
+
+}
+
+#centerContainer{
+    width:75%;
+    height: 80%;
+    mini-height: 350px;
+    align-items: center;
+    line-height: 450px;
+    background-color: lightgray;
+    margin: auto;
+    margin-top: 30px;
+    /* display: inline-block; */
+
+}
+/* 
+#centerBoxes{
+    max-height: 20px;
+
+}
+
+.slogan1{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    max-height: 30px;
+    background-color: blue;
+}
+
+ */
+
