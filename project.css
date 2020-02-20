@@ -1,25 +1,4 @@
-#header{
-    background-color: #3d7068;
-    height: 20%;
-    min-height: 80px;
-    width: 100%;
-    
-}
-#logo{
-    height: 50px;
-    width: 20px;
-    background-color: mediumseagreen;
-}
-#login{
-    height: 50px;
-    width: 20px;
-    background-color: mediumseagreen;
-    text-align: center;
-    style="float:right;
-}
-#centerContainer{
-    height: 80%;
-    width: 75%;
-    background-color: green;
-
+.navbar-brand{
+    font-style: normal;
+    color: black;
 }
