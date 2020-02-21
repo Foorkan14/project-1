@@ -1,69 +1,29 @@
-
-.bg-lgreen{
-    background-color: #43c59e;
+.bg-green{
+    background-color:#3d7068;
+    color: white;
 }
 
-.bg-dgreen{
-    background-color: #3d7068;
-    color:white;
-}
-/* #header{
-    background-color: #3d7068;
-    height: 20%;
-    min-height: 80px;
-    width: 100%;
+.centerContainer{
+    background-color: rgb(199, 199, 199);
+    width: 85%;
+    height: 400px;
+    margin-top: 25px;
 
-    display:flex;
-    flex-direction: row;
+}
+
+.downButtonsBox{
+
+    margin: 2%;
+    justify-content: center;
     align-items: center;
-    line-height: 80px;
-    justify-content: space-between;
-
-    
-
-    
-}
-
-#logo{
-    height: 55px;
-    width: 125px;
-    background-color: red;
-    margin: 15px;
-}
-
-#login{
-
-    height: 55px;
-    width: 125px;
-    background-color:blue;
-    margin: 15px;
+    align-content: center;
+    display: flex;
 
 }
 
-#centerContainer{
-    width:75%;
-    height: 80%;
-    mini-height: 350px;
-    align-items: center;
-    line-height: 450px;
-    background-color: lightgray;
-    margin: auto;
-    margin-top: 30px;
-    /* display: inline-block; */
-
+.downButton{
+    padding-left:40px;
+    padding-right: 40px;
+    margin-right:10%;
+    margin-left: 10%;
 }
-/* 
-#centerBoxes{
-    max-height: 20px;
-
-}
-
-.slogan1{
-    font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
-    max-height: 30px;
-    background-color: blue;
-}
-
- */
- */
