@@ -1,0 +1,118 @@
+[
+        {
+            "id": 1,
+            "title": "Why would you use the \"pass\" statement?",
+            "language": "python3",
+            "description": "Why would you use the \"pass\" statement?  \n\nPython has the syntactical requirement that code blocks cannot be empty. Empty code blocks are however useful in a variety of different contexts, for example if you are designing a new class with some methods that you don't want to implement:\n\nclass MyClass(object):\n    def meth_a(self):\n        pass\n\n    def meth_b(self):\n        print \"I'm meth_b\"\nIf you were to leave out the pass, the code wouldn't run and you'll get an error:\n\nIndentationError: expected an indented block\n\nOther examples when we could use pass:\n\nIgnoring (all or) a certain type of Exception\nDeriving an exception class that does not add new behaviour\nTesting that code runs properly for a few test values, without caring about the results",
+            "contents": "Why would you use the \"pass\" statement? \n\nProvide an example."
+        },
+        {
+            "id": 2,
+            "title": "String Rotation",
+            "language": "html",
+            "description": "First make sure a and b are of the same length. Then check to see if b is a substring of a concatenated with a:\n\nmodule.exports = function (a, b) {\n  return a.length === b.length && (a + a).indexOf(b) > -1;\n};",
+            "contents": "Find out if a string is a rotation of another string.ABCD is a rotation of BCDA but not ACBD."
+        },
+        {
+            "id": 3,
+            "title": "Sum of several arrays",
+            "owner_email": "alexandrfisher26@gmail.com",
+            "language": "html",
+            "description": "function sum_array(arr) {\n  // store our final answer\n  var sum = 0;\n  // loop through entire array\n  for (var i = 0; i < arr.length; i++) {\n    // loop through each inner array\n    for (var j = 0; j < arr[i].length; j++) {\n      // add this number to the current final sum\n      sum += arr[i][j];\n    }\n  }\n\n  return sum;\n}\n\nsum_array([[3, 2], [1], [4, 12]]);\nWith reduce:\n\nfunction sumArray(arr) {\n  return arr.reduce((t, e) => t.concat(e)).reduce((t, e) => t + e)\n}",
+            "contents": "You will be given an array of several arrays that each contain integers and your goal is to write a function that will sum up all the numbers in all the arrays.If the input is [[3, 2], [1], [4, 12]] then your program should output 22 because 3 + 2 + 1 + 4 + 12 = 22. Solve without and with reduce.\n\n"
+        },
+        {
+            "id": 4,
+            "title": "Explain the following",
+            "owner_email": "alexandrfisher26@gmail.com",
+            "language": "plaintext",
+            "description": "JSON: Javascript Object Notation\n\nAPI: Application programming interface\n\ncamelCase:  The first word is lowercase and the first letter of every subsequent word is Capitalized.",
+            "contents": "JSON:\n\nAPI:\n\ncamelCase:\n\n"
+        },
+        {
+            "id": 5,
+            "title": "What will be the output of the following HTML code",
+            "language": "html",
+            "description": "If we apply .list-unstyled to a list, it will remove the default list-style and left margin on the list items. But only for the immediate children. Main list items will be without any style, and nested list items will still have default unordered nested list-style.",
+            "contents": "Think Bootstrap...\n\n<ul class=\"list-unstyled\">\n  <li>Item 1</li>\n  <li>Item 2</li>\n    <ul>\n      <li>Nested item 2.1</li>\n      <li>Nested item 2.2</li>\n      <li>Nested item 2.3</li>\n    </ul>     \n  <li>Item 3</li>\n</ul>"
+        },
+        {
+            "id": 6,
+            "title": "Explain Bootstrap?",
+            "owner_email": "alexandrfisher26@gmail.com",
+            "language": "plaintext",
+            "description": "Bootstrap is a platform for web development that is based on front-end framework and creates exceptional responsive designs. It is fast, easy and has multiple templates designed using HTML, and CSS. These templates are used for forms, tables, buttons, typography, modals, tables, navigation, carousels and images. Bootstrap also has Javascript plugins, which are optional. Bootstrap is preferred for developing mobile web applications.",
+            "contents": "Explain Bootstrap to your best ability."
+        },
+        {
+            "id": 7,
+            "title": "Compare two strings represented as linked lists",
+            "language": "python3",
+            "description": "class Node: \n  \n    # Constructor to create a new node \n    def __init__(self, key): \n        self.c = key ;  \n        self.next = None\n  \ndef compare(list1, list2): \n      \n    # Traverse both lists. Stop when either end of linked  \n    # list is reached or current characters don't watch \n    while(list1 and list2 and list1.c == list2.c): \n        list1 = list1.next \n        list2 = list2.next \n  \n    # If both lists are not empty, compare mismatching \n    # characters  \n    if(list1 and list2): \n        return 1 if list1.c > list2.c else -1 \n  \n    # If either of the two lists has reached end \n    if (list1 and not list2): \n        return 1 \n  \n    if (list2 and not list1): \n        return -1 \n    return 0\n  \n# Driver program \n  \nlist1 = Node('g') \nlist1.next = Node('e') \nlist1.next.next = Node('e') \nlist1.next.next.next = Node('k') \nlist1.next.next.next.next = Node('s') \nlist1.next.next.next.next.next = Node('b') \n  \nlist2 = Node('g') \nlist2.next = Node('e') \nlist2.next.next = Node('e') \nlist2.next.next.next = Node('k') \nlist2.next.next.next.next = Node('s') \nlist2.next.next.next.next.next = Node('a') \n  \nprint compare(list1, list2)",
+            "contents": "/*Given two strings, represented as linked lists (every character is a node in a linked list). Write a function compare() that works similar to strcmp(), i.e., it returns 0 if both strings are same, 1 if first linked list is lexicographically greater, and -1 if the second string is lexicographically greater.\nexample:\n\nInput: list1 = g->e->e->k->s->a\n       list2 = g->e->e->k->s->b\nOutput: -1\n\nInput: list1 = g->e->e->k->s->a\n       list2 = g->e->e->k->s\nOutput: 1\n\nInput: list1 = g->e->e->k->s\n       list2 = g->e->e->k->s\nOutput: 0*/"
+        },
+        {
+            "id": 8,
+            "title": "Write a HTML table tag sequence that outputs the following",
+            "language": "html",
+            "description": "<table>\n  <tr>\n    <td>50 pcs</td>\n    <td>100</td>\n    <td>500</td>\n  </tr>\n  <tr>\n    <td>10 pcs</td>\n    <td>5</td>\n    <td>50</td>\n  </tr>\n</table>",
+            "contents": "Write a HTML table tag sequence that outputs the following:\n\n50 pcs 100 500\n10 pcs 5 50\n\n\n\n<html>\n  <head>\n    <style>\n      body {\n        background-color: #1d2126;\n        color: white;\n      }\n    </style>\n  </head>\n  <body>\n    <h1>Hello, World</h1>\n  </body>\n</html>\n"
+        },
+        {
+            "id": 9,
+            "title": "Explain meta tags in HTML",
+            "language": "html",
+            "description": "Meta tags always go inside head tag of the HTML page\nMeta tags is always passed as name/value pairs\nMeta tags are not displayed on the page but intended for the browser\nMeta tags can contain information about character encoding, description, title of the document etc,",
+            "contents": "Explain meta tags in HTML :\n\n<!DOCTYPE html>\n<html>\n<head>\n  <meta name=\"\" content=\"\"> \n  <title>Home Page</title>\n</head>\n<body>\n\n</body>\n</html>"
+        },
+        {
+            "id": 10,
+            "title": "Tell me about yourself",
+            "language": "plaintext",
+            "description": null,
+            "contents": "Who are you?"
+        },
+        {
+            "id": 11,
+            "title": "What is the difference between span and div?",
+            "language": "html",
+            "description": "div is a block element\nspan is inline element",
+            "contents": "What is the difference between span and div?\n\n\nFor bonus points, you could point out that it’s illegal to place a block element inside an inline element, and that while div can have a p tag, and a p tag can have a span, it is not possible for span to have a div or p tag inside.\n\n\n\n<html>\n  <head>\n    <style>\n      body {\n        background-color: #1d2126;\n        color: white;\n      }\n    </style>\n  </head>\n  <body>\n    <h1>Hello, World</h1>\n  </body>\n</html>\n"
+        },
+        {
+            "id": 12,
+            "title": "Write a function that would allow you to do this.",
+            "language": "javascript",
+            "description": "function createBase(baseNumber) {\n  return function(N) {\n    // we are referencing baseNumber here even though it was declared\n    // outside of this function. Closures allow us to do this in JavaScript\n    return baseNumber + N;\n  }\n}\n\nvar addSix = createBase(6);\naddSix(10);\naddSix(21);",
+            "contents": "var addSix = createBase(6);\naddSix(10); // returns 16\naddSix(21); // returns 27"
+        },
+        {
+            "id": 13,
+            "title": "FizzBuzz Challenge",
+            "language": "javascript",
+            "description": "for (let i = 1; i <= 100; i++) {\n  let f = i % 3 == 0,\n    b = i % 5 == 0;\n  console.log(f ? (b ? 'FizzBuzz' : 'Fizz') : b ? 'Buzz' : i);\n}",
+            "contents": "Create a for loop that iterates up to 100 while outputting \"fizz\" at multiples of 3, \"buzz\" at multiples of 5 and \"fizzbuzz\" at multiples of 3 and 5."
+        },
+        {
+            "id": 14,
+            "title": "Explain and show an example of arrays in JavaScript",
+            "language": "javascript",
+            "description": "An array is an object that holds values (of any type) not particularly in named properties/keys, but rather in numerically indexed positions:\n\nvar arr = [\n    \"hello world\",\n    42,\n    true\n];\n\narr[0];            // \"hello world\"\narr[1];            // 42\narr[2];            // true\narr.length;        // 3\n\ntypeof arr;        // \"object\"",
+            "contents": "Explain and show an example of arrays in JavaScript "
+        },
+        {
+            "id": 15,
+            "title": "Remove Duplicates",
+            "language": "javascript",
+            "description": "// ES6 Implementation\nvar array = [1, 2, 3, 5, 1, 5, 9, 1, 2, 8];\n\nArray.from(new Set(array)); // [1, 2, 3, 5, 9, 8]\n\n// ES5 Implementation\nvar array = [1, 2, 3, 5, 1, 5, 9, 1, 2, 8];\n\nuniqueArray(array); // [1, 2, 3, 5, 9, 8]\n\nfunction uniqueArray(array) {\n  var hashmap = {};\n  var unique = [];\n\n  for(var i = 0; i < array.length; i++) {\n    // If key returns undefined (unique), it is evaluated as false.\n    if(!hashmap.hasOwnProperty(array[i])) {\n      hashmap[array[i]] = 1;\n      unique.push(array[i]);\n    }\n  }\n\n  return unique;\n}",
+            "contents": "Remove duplicates of an array and return an array of only unique elements\n\nvar array = [1, 2, 3, 5, 1, 5, 9, 1, 2, 8];"
+
+        },
+        {
+            "id": 16,
+            "title": "Reverse String",
+            "language": "javascript",
+            "description": "var string = \"Welcome to this Javascript Guide!\";\nvar reverseEntireSentence = reverseBySeparator(string, \"\");\nvar reverseEachWord = reverseBySeparator(reverseEntireSentence, \" \");\nfunction reverseBySeparator(string, separator) {\n  return string.split(separator).reverse().join(separator);\n}",
+            "contents": "  Given a string, reverse each word in the sentence   check_box_outline_blank    \nFor example Welcome to this Javascript Guide! should be become emocleW ot siht tpircsavaJ !ediuG"
+        }
+    ]  
