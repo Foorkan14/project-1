@@ -1,4 +1,13 @@
-#header{
+
+.bg-lgreen{
+    background-color: #43c59e;
+}
+
+.bg-dgreen{
+    background-color: #3d7068;
+    color:white;
+}
+/* #header{
     background-color: #3d7068;
     height: 20%;
     min-height: 80px;
@@ -57,4 +66,4 @@
 }
 
  */
-
+ */
