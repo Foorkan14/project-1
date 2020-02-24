@@ -113,6 +113,6 @@
             "title": "Reverse String",
             "language": "javascript",
             "description": "var string = \"Welcome to this Javascript Guide!\";\nvar reverseEntireSentence = reverseBySeparator(string, \"\");\nvar reverseEachWord = reverseBySeparator(reverseEntireSentence, \" \");\nfunction reverseBySeparator(string, separator) {\n  return string.split(separator).reverse().join(separator);\n}",
-            "contents": "  Given a string, reverse each word in the sentence   check_box_outline_blank    \nFor example Welcome to this Javascript Guide! should be become emocleW ot siht tpircsavaJ !ediuG"
+            "contents": "  Given a string, reverse each word  in the sentence   check_box_outline_blank    \nFor example Welcome to this Javascript Guide! should be become emocleW ot siht tpircsavaJ !ediuG"
         }
     ]  
