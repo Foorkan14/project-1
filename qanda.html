@@ -29,28 +29,37 @@
               </div>
     </nav>
 
-
-
-
     
     <div class="container question">
         <h3>Question Title</h3>
 
        
-        <div class="qcontent rounded shadow">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam cum illo, deserunt sequi voluptatibus, consequatur aperiam vitae dolor animi repellat eveniet aliquid similique velit nostrum eius repudiandae quisquam voluptate omnis!<hr>
+        <div class="qcontent rounded shadow">
+          <span id="q">ipsum dolor sit, amet consectetur adipisicing elit. Numquam cum illo, deserunt sequi voluptatibus, consequatur aperiam vitae dolor animi repellat eveniet aliquid similique velit nostrum eius repudiandae quisquam voluptate omnis!</span> <hr>
             <h5>Answer</h5>
             <div class="provided_answer rounded"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis, voluptatem nobis eaque hic qui provident consequuntur dignissimos eveniet quae officiis obcaecati quo accusantium ad temporibus autem soluta expedita dolores deserunt!</div>
 
+
         </div>
-        
+
+          <h5>Countdown Timer</h5>
+          <div id="clockdiv">
+            <div>
+              <span class="minutes"></span>
+                <div class="smalltext">Minutes</div>
+              </div>
+              <div>
+                <span class="seconds"></span>
+              <div class="smalltext">Seconds</div>
+            </div>
+          </div>
         
         <div>
-        </div>
-    </div>
+
 
 
     <div class="downButtonsBox">
-        <button type="submit" class="btn bg-green btn-lg downButton shadow" onclick="window.location.href ='signup.html';">Submit</button>
+        <button type="submit" class="btn bg-green btn-lg downButton shadow" id="snq">Start a New Question</button>
 
     </div>
 
@@ -69,16 +78,111 @@
 
 
 
-
-
-
-
-
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="./js/bootstrap.min.js"></script>
+
+
+
+    <script>
+  
+      $("#snq").click((e)=>{ 
+        console.log("clicked solo");
+
+        e.preventDefault();
+
+
+
+        let i=4;
+
+        fetch("./js/questions.json")
+        .then(response => response.json())
+        .then(json => {
+        console.log(json);
+        console.log(json[i].title);
+        $("h3").html(json[i].title);
+        $("#q").html(json[i].description);
+        $(".provided_answer").html(json[i].contents);
+        })
+
+
+
+///timer:
+        // function getTimeRemaining(endtime) {
+        // var t = Date.parse(endtime) - Date.parse(new Date());
+        // var seconds = Math.floor((t / 1000) % 60);
+        // var minutes = Math.floor((t / 1000 / 60) % 60);
+        // var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+        // return {
+        // 'total': t,
+        // 'hours': hours,
+        // 'minutes': minutes,
+        // 'seconds': seconds
+        // };
+        // }
+        // function initializeClock(id, endtime) {
+        // var clock = document.getElementById(id);
+        // var daysSpan = clock.querySelector('.days');
+        // var hoursSpan = clock.querySelector('.hours');
+        // var minutesSpan = clock.querySelector('.minutes');
+        // var secondsSpan = clock.querySelector('.seconds');
+        // function updateClock() {
+        // var t = getTimeRemaining(endtime);
+        // daysSpan.innerHTML = t.days;
+        // hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+        // minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+        // secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+        // if (t.total <= 0) {
+        // clearInterval(timeinterval);
+        // }
+        // }
+        // updateClock();
+        // var timeinterval = setInterval(updateClock, 1000);
+        // }
+        // var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+        // initializeClock('clockdiv', deadline);
+
+
+
+
+
+
+
+          
+      });
+  
+  </script>
+
+
+<script>
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </body>
 </html>
