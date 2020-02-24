@@ -114,8 +114,8 @@
           console.log(json);
           console.log(json[i].title);
           $("h3").html(json[i].title);
-          $("#q").html(json[i].contents);
-          $(".provided_answer").html(json[i].description);
+          $("#q").html(`<code>${json[i].contents}</code>`);
+          $(".provided_answer").html(`<code>${json[i].description}</code>`);
           $("#lan").html(json[i].language);
 
           const url = 'https://api.voicerss.org';
