@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/login-styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
     <title>Log In</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.9.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.9.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.9.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.9.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.9.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 </head>
 <body>
     <div class="container">
@@ -21,15 +31,17 @@
                 <input type="password" id="password" placeholder="Enter Your Password">
                 <small>Error Message</small>
             </div>
-            <button type="submit"><span>Submit</span></button>
-            <button type="submit"><span>Create Account</span></button>
+            <button type="submit" id='submit'><span>Submit</span></button>
+            <button type="submit" id='create'><span>Create Account</span></button>
         </form>
         <div>
-            <h4 class="google">Log In With Google</h4>
-            <div class="google">
+            <h4 class="google">Log-In With Google</h4>
+            <div class="google" id='google'>
                 <img width='50px'class="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1004px-Google_%22G%22_Logo.svg.png" alt="">
             </div>
         </div>
     </div>
+    <script src=firebase.js></script>
+    
 </body>
 </html>
