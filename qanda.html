@@ -118,16 +118,7 @@
           $(".provided_answer").html(`<code>${json[i].description}</code>`);
           $("#lan").html(json[i].language);
 
-          const url = 'https://api.voicerss.org';
-          const apiKey =  'a5d0056b381d41309c35c96bbcbc8c45';
-          const buildUrl =(str) => `${url}?key=${apiKey}&src=${str}&f=48khz_16bit_stereo`;
-          const emptyString = (str) => str.split('').every(_char => _char === ' '|| _char === '\n');
-          // let playBtn = () => document.getElementById('play-btn');
-          const textInput = json[i].contents;
-          console.log(textInput);
-          // const appContainer = () => document.getElementById('app-container');
-          const errorContainer = () => document.getElementById('error-messages');
-          new Audio(buildUrl(textInput)).play();
+          new Audio(`https://api.voicerss.org?key=a5d0056b381d41309c35c96bbcbc8c45&src=${json[i].contents}&f=16khz_8bit_stereo`).play();
 
           })
         }
