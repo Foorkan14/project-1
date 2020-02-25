@@ -9,14 +9,13 @@
         {
             "id": 2,
             "title": "String Rotation",
-            "language": "html",
-            "description": "First make sure a and b are of the same length. Then check to see if b is a substring of a concatenated with a:\n\nmodule.exports = function (a, b) {\n  return a.length === b.length && (a + a).indexOf(b) > -1;\n};",
-            "contents": "Find out if a string is a rotation of another string.ABCD is a rotation of BCDA but not ACBD."
+            "language": "JavaScript",
+            "description": "Take the inital sentence and split it by the saces in the sentence, place them into a list.",
+            "contents": "Reverse a sentence ('bob likes dogs' -> 'dogs likes bob')"
         },
         {
             "id": 3,
             "title": "Sum of several arrays",
-            "owner_email": "alexandrfisher26@gmail.com",
             "language": "html",
             "description": "function sum_array(arr) {\n  // store our final answer\n  var sum = 0;\n  // loop through entire array\n  for (var i = 0; i < arr.length; i++) {\n    // loop through each inner array\n    for (var j = 0; j < arr[i].length; j++) {\n      // add this number to the current final sum\n      sum += arr[i][j];\n    }\n  }\n\n  return sum;\n}\n\nsum_array([[3, 2], [1], [4, 12]]);\nWith reduce:\n\nfunction sumArray(arr) {\n  return arr.reduce((t, e) => t.concat(e)).reduce((t, e) => t + e)\n}",
             "contents": "You will be given an array of several arrays that each contain integers and your goal is to write a function that will sum up all the numbers in all the arrays.If the input is [[3, 2], [1], [4, 12]] then your program should output 22 because 3 + 2 + 1 + 4 + 12 = 22. Solve without and with reduce.\n\n"
@@ -24,7 +23,6 @@
         {
             "id": 4,
             "title": "Explain the following",
-            "owner_email": "alexandrfisher26@gmail.com",
             "language": "plaintext",
             "description": "JSON: Javascript Object Notation\n\nAPI: Application programming interface\n\ncamelCase:  The first word is lowercase and the first letter of every subsequent word is Capitalized.",
             "contents": "JSON:\n\nAPI:\n\ncamelCase:\n\n"
@@ -39,7 +37,6 @@
         {
             "id": 6,
             "title": "Explain Bootstrap?",
-            "owner_email": "alexandrfisher26@gmail.com",
             "language": "plaintext",
             "description": "Bootstrap is a platform for web development that is based on front-end framework and creates exceptional responsive designs. It is fast, easy and has multiple templates designed using HTML, and CSS. These templates are used for forms, tables, buttons, typography, modals, tables, navigation, carousels and images. Bootstrap also has Javascript plugins, which are optional. Bootstrap is preferred for developing mobile web applications.",
             "contents": "Explain Bootstrap to your best ability."
