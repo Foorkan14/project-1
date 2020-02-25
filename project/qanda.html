@@ -47,21 +47,14 @@
 
             </div>
 
+
         </div>
 
-          <h5>Countdown Timer</h5>
-          <div id="clockdiv">
-            <div>
-              <span class="minutes"></span>
-                <div class="smalltext">Minutes</div>
-              </div>
-              <div>
-                <span class="seconds"></span>
-              <div class="smalltext">Seconds</div>
-            </div>
-          </div>
+
+ 
+          <div><p id="timer"></p></div>
+
         
-        <div>
 
 
 
@@ -69,8 +62,11 @@
         <button type="submit" class="btn bg-green btn-lg downButton shadow" id="snq">Start a New Question</button>
 
     </div>
-
     </div>
+
+
+
+
 
 
 
@@ -122,71 +118,21 @@
           $(".provided_answer").html(`<code>${json[i].description}</code>`);
           $("#lan").html(json[i].language);
 
-          new Audio(`https://api.voicerss.org?key=a5d0056b381d41309c35c96bbcbc8c45&src=${json[i].contents}&f=24khz_8bit_mono`).play();
+          new Audio(`https://api.voicerss.org?key=a5d0056b381d41309c35c96bbcbc8c45&src=${json[i].contents}&f=16khz_8bit_stereo`).play();
 
           })
         }
-  
-      $("#snq").click((e)=>{ 
-        console.log("clicked solo");
-
-        e.preventDefault();
 
 
 
-        let i=4;
 
-        fetch("./js/questions.json")
-        .then(response => response.json())
-        .then(json => {
-        console.log(json);
-        console.log(json[i].title);
-        $("h3").html(json[i].title);
-        $("#q").html(json[i].description);
-        $(".provided_answer").html(json[i].contents);
-        })
-
-
-
-///timer:
-        // function getTimeRemaining(endtime) {
-        // var t = Date.parse(endtime) - Date.parse(new Date());
-        // var seconds = Math.floor((t / 1000) % 60);
-        // var minutes = Math.floor((t / 1000 / 60) % 60);
-        // var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-        // return {
-        // 'total': t,
-        // 'hours': hours,
-        // 'minutes': minutes,
-        // 'seconds': seconds
-        // };
-        // }
-        // function initializeClock(id, endtime) {
-        // var clock = document.getElementById(id);
-        // var daysSpan = clock.querySelector('.days');
-        // var hoursSpan = clock.querySelector('.hours');
-        // var minutesSpan = clock.querySelector('.minutes');
-        // var secondsSpan = clock.querySelector('.seconds');
-        // function updateClock() {
-        // var t = getTimeRemaining(endtime);
-        // daysSpan.innerHTML = t.days;
-        // hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-        // minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-        // secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-        // if (t.total <= 0) {
-        // clearInterval(timeinterval);
-        // }
-        // }
-        // updateClock();
-        // var timeinterval = setInterval(updateClock, 1000);
-        // }
-        // var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
-        // initializeClock('clockdiv', deadline);
 
 
       });
   
   </script>
+
+
 
 
 <script>
@@ -326,11 +272,6 @@ let click_time=0;
 
  })
 
-<script>
-
-
-
-
 </script>
 
 
@@ -355,3 +296,4 @@ let click_time=0;
 
   </body>
 </html>
+
