@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', event=>{
     const app = firebase.app()
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-            window.location.href = 'google.com'
+            window.history.back();
         } else {
             let loginButton = document.querySelector('#submit')
             loginButton.addEventListener('click', (e)=>{
@@ -48,7 +48,7 @@ googleButton.addEventListener('click', (e)=>{
 
 createButton.addEventListener('click', (e)=>{
     e.preventDefault();
-    window.location.href='create-account.html';
+    window.location.href='createlogin.html';
 })
 
 //adding stuff
