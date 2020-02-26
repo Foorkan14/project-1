@@ -66,7 +66,7 @@
 <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
 
 <script>
-function changePage(){
+var changePage= ()=>{
   window.location.href = "login-page.html"
 }
 var changePartner = ()=>{
@@ -77,8 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
   firebase.auth().onAuthStateChanged(function(user)
   {
     if (user) {
-      function changePage(){
-      window.location.href = "#"
+      changePage=()=>{
+      window.location.href = "forms.html"
       }
       let loginButton = document.querySelector('#login')
       loginButton.textContent = 'Forms'
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'qanda.html'
       }
     } else {
-      function changePage(){
+      changePage=()=>{
       window.location.href = "login-page.html"
       }
       let loginButton = document.querySelector('#login')
