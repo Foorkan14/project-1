@@ -47,7 +47,7 @@
 
     <div class="downButtonsBox">
         <button type="submit" id="soloQ" class="btn bg-green btn-lg downButton shadow" >Solo</button> 
-        <button type="submit" class="btn bg-green btn-lg downButton shadow" onclick="window.location.href ='signup.html';">Partners</button>
+        <button type="submit" class="btn bg-green btn-lg downButton shadow" onclick='changePartner()'>Partners</button>
 
     </div>
 
@@ -69,6 +69,9 @@
 function changePage(){
   window.location.href = "login-page.html"
 }
+var changePartner = ()=>{
+        window.location.href = 'login-page.html'
+}
 document.addEventListener('DOMContentLoaded', function() {
   let app = firebase.app();
   firebase.auth().onAuthStateChanged(function(user)
@@ -86,6 +89,9 @@ document.addEventListener('DOMContentLoaded', function() {
       signOutButton.onclick = ()=>{firebase.auth().signOut()}
       let buttonDiv = document.querySelector('#buttons')
       buttonDiv.append(signOutButton)
+      changePartner=()=>{
+        window.location.href = 'qanda.html'
+      }
     } else {
       function changePage(){
       window.location.href = "login-page.html"
@@ -94,6 +100,9 @@ document.addEventListener('DOMContentLoaded', function() {
       loginButton.textContent = 'Login'
       let signOutButton = document.querySelector('#signOut') 
       signOutButton.parentNode.removeChild(signOutButton)
+      changePartner=()=>{
+        window.location.href = 'login-page.html'
+      }
     }
   })
 })

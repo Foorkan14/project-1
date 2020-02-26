@@ -26,7 +26,7 @@ createAccountBtn.addEventListener('click', (e)=>{
         if (user) {
             window.location.href='index.html'
         } else {
-            passwordInput;
+            pass;
         }
     });
 
