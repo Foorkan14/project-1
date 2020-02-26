@@ -1,8 +1,12 @@
+function createPage(){
+    window.location.href = 'createlogin.html'
+}
+
 document.addEventListener('DOMContentLoaded', event=>{
     const app = firebase.app()
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-            window.location.href = 'google.com'
+            window.history.back();
         } else {
             let loginButton = document.querySelector('#submit')
             loginButton.addEventListener('click', (e)=>{
@@ -25,12 +29,7 @@ function googleLogin(){
     });
 }
 
-function create_email_password(email, password){
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-    });
-}
+
 
 function signIn_email_password(email, password){
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
@@ -40,7 +39,7 @@ function signIn_email_password(email, password){
 }
 
 let googleButton = document.querySelector('#google');
-let createButton = document.querySelector('#create')
+let createButton = document.querySelector('#create');
 
 googleButton.addEventListener('click', (e)=>{
     googleLogin();
@@ -48,7 +47,8 @@ googleButton.addEventListener('click', (e)=>{
 
 createButton.addEventListener('click', (e)=>{
     e.preventDefault();
-    window.location.href='create-account.html';
+    window.location.href='createlogin.html';
 })
+
 
 //adding stuff
