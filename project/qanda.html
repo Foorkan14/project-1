@@ -245,14 +245,15 @@
           .then(json => {
           console.log(json);
           console.log(json[i].title);
+          $("#lanTitle").html(`The language we are testing is: <span id="lan"></span>`)
+          $("#answer_title").html("The Correct Answer:");
+          $("#answer_field").attr("class","provided_answer rounded");
+          
           $("h3").html(json[i].title);
           $("#q").html(`<code>${json[i].contents}</code>`);
           $(".provided_answer").html(`<code>${json[i].description}</code>`);
           $("#lan").html(json[i].language);
 
-          $("#lanTitle").html(`The language we are testing is: <span id="lan"></span>`)
-          $("#answer_title").html("The Correct Answer:");
-          $("#answer_field").attr("class","provided_answer rounded");
 
           new Audio(`https://api.voicerss.org?key=a5d0056b381d41309c35c96bbcbc8c45&src=${json[i].contents}&f=16khz_8bit_stereo`).play();
 
