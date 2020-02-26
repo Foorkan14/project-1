@@ -37,7 +37,7 @@
 
        
         <div class="qcontent rounded shadow">
-          <span id="q">You are entering partnered testing on coding interview questions, it is timed for 10 minites with correct answer provided. Click the button below to get started.</span>
+          <span id="q">You are entering partnered testing on coding interview questions, it is timed for 10 minites for 3 questions with correct answers provided. Click the button below to get started.</span>
 
           <hr>
 
@@ -89,11 +89,19 @@
     <script>
       let showed_question="";
       let i=0;
+      let click_time=0;
 
       $("#snq").click((e)=>{ 
 
 
         e.preventDefault();
+        click_time++;
+
+        if(click_time==3){
+          window.location.href="index.html";
+          console.log("3times");
+
+        };
 
         while(showed_question.includes(i)){
           i=Math.floor(Math.random() * 16);
