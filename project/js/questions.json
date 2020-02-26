@@ -56,20 +56,20 @@
             "title": "Write a HTML table tag sequence that outputs the following",
             "language": "html",
             "description": "<table>\n  <tr>\n    <td>50 pcs</td>\n    <td>100</td>\n    <td>500</td>\n  </tr>\n  <tr>\n    <td>10 pcs</td>\n    <td>5</td>\n    <td>50</td>\n  </tr>\n</table>",
-            "contents": "Write a HTML table tag sequence that outputs the following:\n\n50 pcs 100 500\n10 pcs 5 50\n\n\n\n<html>\n  <head>\n    <style>\n      body {\n        background-color: #1d2126;\n        color: white;\n      }\n    </style>\n  </head>\n  <body>\n    <h1>Hello, World</h1>\n  </body>\n</html>\n"
+            "contents": "Write a HTML table tag sequence that outputs the following:\n\n50 pcs 100 500\n10 pcs 5 50\n\n\n\n<html>\n"
         },
         {
             "id": 9,
             "title": "Explain meta tags in HTML",
             "language": "html",
             "description": "Meta tags always go inside head tag of the HTML page\nMeta tags is always passed as name/value pairs\nMeta tags are not displayed on the page but intended for the browser\nMeta tags can contain information about character encoding, description, title of the document etc,",
-            "contents": "Explain meta tags in HTML :\n\n<!DOCTYPE html>\n<html>\n<head>\n  <meta name=\"\" content=\"\"> \n  <title>Home Page</title>\n</head>\n<body>\n\n</body>\n</html>"
+            "contents": "Explain meta tags in HTML"
         },
         {
             "id": 10,
             "title": "Tell me about yourself",
             "language": "plaintext",
-            "description": null,
+            "description": "Just be be yourself.",
             "contents": "Who are you?"
         },
         {
@@ -77,7 +77,7 @@
             "title": "What is the difference between span and div?",
             "language": "html",
             "description": "div is a block element\nspan is inline element",
-            "contents": "What is the difference between span and div?\n\n\nFor bonus points, you could point out that it’s illegal to place a block element inside an inline element, and that while div can have a p tag, and a p tag can have a span, it is not possible for span to have a div or p tag inside.\n\n\n\n<html>\n  <head>\n    <style>\n      body {\n        background-color: #1d2126;\n        color: white;\n      }\n    </style>\n  </head>\n  <body>\n    <h1>Hello, World</h1>\n  </body>\n</html>\n"
+            "contents": "What is the difference between span and div?\n\n\nFor bonus points, you could point out that it’s illegal to place a block element inside an inline element, and that while div can have a p tag, and a p tag can have a span, it is not possible for span to have a div or p tag inside."
         },
         {
             "id": 12,

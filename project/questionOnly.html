@@ -114,7 +114,7 @@
         e.preventDefault();
         click_time++;
 
-        if(click_time==6){
+        if(click_time==8){
           window.location.href="index.html";
           console.log("3times");
 
@@ -276,9 +276,9 @@
       $("#lanTitle").html(`The language we are testing is: <span id="lan"></span>`)
       $("#answer_title").html("The Correct Answer:");
       $("#answer_field").attr("class","provided_answer rounded");
-      
+
       $("h3").html(json[i].title);
-      $("#q").html(`<code>${json[i].contents}</code>`);          
+      $("#q").html(json[i].contents);          
       $("#lan").html(json[i].language);
 
       if(click_time%2==0){
