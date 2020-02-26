@@ -37,15 +37,13 @@
 
        
         <div class="qcontent rounded shadow">
-          <span id="q">ipsum dolor sit, amet consectetur adipisicing elit. Numquam cum illo, deserunt sequi voluptatibus, consequatur aperiam vitae dolor animi repellat eveniet aliquid similique velit nostrum eius repudiandae quisquam voluptate omnis!</span>
-          
+          <span id="q">You are entering partnered testing on coding interview questions, it is timed for 10 minites for 3 questions with correct answers provided. Click the button below to get started.</span>
+
           <hr>
 
-            <h5>Correct Answer:</h5>
-
-            <div class="provided_answer rounded"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis, voluptatem nobis eaque hic qui provident consequuntur dignissimos eveniet quae officiis obcaecati quo accusantium ad temporibus autem soluta expedita dolores deserunt!
-
-            </div>
+          <h5 id="answer_title"></h5>
+        <div id="answer_field"></div>
+        </div>
 
 
         </div>
@@ -91,11 +89,19 @@
     <script>
       let showed_question="";
       let i=0;
+      let click_time=0;
 
       $("#snq").click((e)=>{ 
 
 
         e.preventDefault();
+        click_time++;
+
+        if(click_time==3){
+          window.location.href="index.html";
+          console.log("3times");
+
+        };
 
         while(showed_question.includes(i)){
           i=Math.floor(Math.random() * 16);
@@ -117,6 +123,10 @@
           $("#q").html(`<code>${json[i].contents}</code>`);
           $(".provided_answer").html(`<code>${json[i].description}</code>`);
           $("#lan").html(json[i].language);
+
+          $("#lanTitle").html(`The language we are testing is: <span id="lan"></span>`)
+          $("#answer_title").html("The Correct Answer:");
+          $("#answer_field").attr("class","provided_answer rounded");
 
           new Audio(`https://api.voicerss.org?key=a5d0056b381d41309c35c96bbcbc8c45&src=${json[i].contents}&f=16khz_8bit_stereo`).play();
 
