@@ -37,7 +37,7 @@
 
        
         <div class="qcontent rounded shadow">
-          <span id="q">You are entering self testing on coding interview questions, it is timed for 10 minites with correct answer provided. Click the button below to get started.</span>
+          <span id="q">You are entering self testing on coding interview questions, it is timed for 10 minites for 3 questions with correct answers provided. Click the button below to get started.</span>
           
           <hr>
 
@@ -72,9 +72,6 @@
       </footer>
 
 
-
-
-      
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -245,9 +242,10 @@
         console.log(json);
       console.log(json[i].title);
       $("h3").html(json[i].title);
-      $("#lanTitle").html(`The language we are testing is: <span id="lan"></span>`)
       $("#q").html(`<code>${json[i].contents}</code>`);          
       $("#lan").html(json[i].language);
+
+      $("#lanTitle").html(`The language we are testing is: <span id="lan"></span>`)
       $("#answer_title").html("The Correct Answer:");
       $("#answer_field").attr("class","provided_answer rounded");
 
