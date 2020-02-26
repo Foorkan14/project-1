@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
 
-
 </head>
   <body>
 
@@ -38,9 +37,25 @@
 
 
     
-    <div class="container centerContainer">
-            
-        <div></div>
+    <div class="container centerContainer rounded">
+      <div id="wrapper">
+        <h1>
+            <span id="title">
+                <span class="title-letter">L</span>
+                <span class="title-letter">e</span>
+                <span class="title-letter">v</span>
+                <span class="title-letter">e</span>
+                <span class="title-letter">l</span>
+                <span class="title-letter">&nbsp;</span>
+                <span class="title-letter">U</span>
+                <span class="title-letter">P</span>
+            </span>
+            <br/>
+    
+            <span id="sub-title">Coding one step at a time</span>
+        </h1>
+
+    </div>
         <div></div>
     </div>
 
@@ -129,5 +144,55 @@ $("#soloQ").click((e)=>{
 </script>
 </body>
 
+</html>
+
+
+
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase-auth.js"></script>
+    <script>
+
+
+      const app = firebase.app()
+
+      $("#soloQ").click((e)=>{ 
+          console.log("clicked solo");
+          e.preventDefault();
+
+  
+          fetch("./js/questions.json")
+          .then(response => response.json())
+          .then(json => {
+          console.log(json);
+          console.log(json[1].title);
+          })
+          
+      });
+
+
+
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            logStat = 'account-forms.html'
+            logInButton.textContent = 'Forms'
+        } else {
+          let logInButton = document.querySelector('#login')
+          logInButton.addEventListener('click', (e)=>
+          {
+            window.location.href = 'login-page.html'
+            // console.log(e);
+          })
+        }
+    }); 
+    
+  
+  </script>
+</body>
 </html>
 
