@@ -31,7 +31,7 @@
 
     
     <div class="container question">
-        <h3>Self Testing</h3>
+        <h4>Self Testing</h4>
 
         <h5 id="lanTitle"></h5>
 
@@ -41,7 +41,7 @@
           
           <hr>
 
-          <h5 id="answer_title"></h5>
+          <div id="answer_title"></div>
           <div id="answer_field"></div>
         </div>
 
@@ -256,7 +256,7 @@
       $("#answer_title").html("The Correct Answer:");
       $("#answer_field").attr("class","provided_answer rounded");
 
-      $("h3").html(json[i].title);
+      $("h4").html(json[i].title);
       $("#q").html(json[i].contents);          
       $("#lan").html(json[i].language);
 
