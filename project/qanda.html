@@ -252,7 +252,7 @@
           $("#answer_field").attr("class","provided_answer rounded");
 
           $("h3").html(json[i].title);
-          $("#q").html(`<code>${json[i].contents}</code>`);
+          $("#q").html(json[i].contents);
           $(".provided_answer").html(`<code>${json[i].description}</code>`);
           $("#lan").html(json[i].language);
 

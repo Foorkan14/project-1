@@ -254,7 +254,7 @@
       $("#answer_field").attr("class","provided_answer rounded");
 
       $("h3").html(json[i].title);
-      $("#q").html(`<code>${json[i].contents}</code>`);          
+      $("#q").html(json[i].contents);          
       $("#lan").html(json[i].language);
 
       if(click_time%2==0){
