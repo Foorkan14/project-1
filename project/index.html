@@ -4,21 +4,21 @@
     <title>Level++</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
     <title>Log In</title>
 
     <!-- update the version number as needed -->
-    <script defer src="/__/firebase/7.9.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/7.9.1/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/7.9.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.9.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.9.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.9.0/firebase-storage.js"></script>
+    <script defer src="/__/firebase/7.9.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.9.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.9.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.9.1/firebase-storage.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
-    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
+
+
 </head>
   <body>
 
@@ -26,9 +26,9 @@
     <nav class="navbar navbar-dark bg-green sticky-top shadow ">
         <div><a class="navbar-brand" href="#">Level++</a></div>
         <!-- Default dropleft button -->
-        <div class="btn-group dropleft">
+        <div class="btn-group dropleft" id='buttons'>
 
-            <button type="button" class="btn btn-secondary">
+            <button onclick="changePage()" id='login' type="button" class="btn btn-secondary">
             Login
             </button>
         </div>
@@ -47,7 +47,7 @@
 
     <div class="downButtonsBox">
         <button type="submit" id="soloQ" class="btn bg-green btn-lg downButton shadow" >Solo</button> 
-        <button type="submit" class="btn bg-green btn-lg downButton shadow" onclick="window.location.href ='signup.html';">Partners</button>
+        <button type="submit" class="btn bg-green btn-lg downButton shadow" onclick='changePartner()'>Partners</button>
 
     </div>
 
@@ -58,53 +58,74 @@
           <span class="text-muted"></span>
         </div>
       </footer>
+<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+ <!-- The core Firebase JS SDK is always required and must be listed first  -->
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
 
+ <!--TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries   -->
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
 
+<script>
+function changePage(){
+  window.location.href = "login-page.html"
+}
+var changePartner = ()=>{
+        window.location.href = 'login-page.html'
+}
+document.addEventListener('DOMContentLoaded', function() {
+  let app = firebase.app();
+  firebase.auth().onAuthStateChanged(function(user)
+  {
+    if (user) {
+      function changePage(){
+      window.location.href = "#"
+      }
+      let loginButton = document.querySelector('#login')
+      loginButton.textContent = 'Forms'
+      let signOutButton = document.createElement('button')
+      signOutButton.id = 'signOut'
+      signOutButton.textContent = 'Log Out'
+      signOutButton.className = 'btn btn-secondary'
+      signOutButton.onclick = ()=>{firebase.auth().signOut()}
+      let buttonDiv = document.querySelector('#buttons')
+      buttonDiv.append(signOutButton)
+      changePartner=()=>{
+        window.location.href = 'qanda.html'
+      }
+    } else {
+      function changePage(){
+      window.location.href = "login-page.html"
+      }
+      let loginButton = document.querySelector('#login')
+      loginButton.textContent = 'Login'
+      let signOutButton = document.querySelector('#signOut') 
+      signOutButton.parentNode.removeChild(signOutButton)
+      changePartner=()=>{
+        window.location.href = 'login-page.html'
+      }
+    }
+  })
+})
+</script>
 
-      
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="./js/bootstrap.min.js"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script defer src="./js/bootstrap.min.js"></script>
+<script>
 
-    <script>
-  
-      $("#soloQ").click((e)=>{ 
-          console.log("clicked solo");
- 
-          e.preventDefault();
-
-  
-          fetch("./js/questions.json")
-          .then(response => response.json())
-          .then(json => {
-          console.log(json);
-          console.log(json[1].title);
-          
-     
-          })
-          
-      });
-  
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </body>
+$("#soloQ").click((e)=>{ 
+    console.log("clicked solo");
+    e.preventDefault();
+    fetch("./js/questions.json")
+    .then(response => response.json())
+    .then(json => {
+    console.log(json);
+    console.log(json[1].title);
+    })
+    
+});
+</script>
+</body>
 </html>
