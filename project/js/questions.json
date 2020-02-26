@@ -46,27 +46,27 @@
             "title": "Compare two strings represented as linked lists",
             "language": "python3",
             "description": "class Node: \n  \n    # Constructor to create a new node \n    def __init__(self, key): \n        self.c = key ;  \n        self.next = None\n  \ndef compare(list1, list2): \n      \n    # Traverse both lists. Stop when either end of linked  \n    # list is reached or current characters don't watch \n    while(list1 and list2 and list1.c == list2.c): \n        list1 = list1.next \n        list2 = list2.next \n  \n    # If both lists are not empty, compare mismatching \n    # characters  \n    if(list1 and list2): \n        return 1 if list1.c > list2.c else -1 \n  \n    # If either of the two lists has reached end \n    if (list1 and not list2): \n        return 1 \n  \n    if (list2 and not list1): \n        return -1 \n    return 0\n  \n# Driver program \n  \nlist1 = Node('g') \nlist1.next = Node('e') \nlist1.next.next = Node('e') \nlist1.next.next.next = Node('k') \nlist1.next.next.next.next = Node('s') \nlist1.next.next.next.next.next = Node('b') \n  \nlist2 = Node('g') \nlist2.next = Node('e') \nlist2.next.next = Node('e') \nlist2.next.next.next = Node('k') \nlist2.next.next.next.next = Node('s') \nlist2.next.next.next.next.next = Node('a') \n  \nprint compare(list1, list2)",
-            "contents": "/*Given two strings, represented as linked lists (every character is a node in a linked list). Write a function compare() that works similar to strcmp(), i.e., it returns 0 if both strings are same, 1 if first linked list is lexicographically greater, and -1 if the second string is lexicographically greater.\nexample:\n\nInput: list1 = g->e->e->k->s->a\n       list2 = g->e->e->k->s->b\nOutput: -1\n\nInput: list1 = g->e->e->k->s->a\n       list2 = g->e->e->k->s\nOutput: 1\n\nInput: list1 = g->e->e->k->s\n       list2 = g->e->e->k->s\nOutput: 0*/"
+            "contents": "Given two strings, represented as linked lists (every character is a node in a linked list). Write a function compare() that works similar to strcmp(), i.e., it returns 0 if both strings are same, 1 if first linked list is lexicographically greater, and -1 if the second string is lexicographically greater.\nexample:\n\nInput: list1 = g->e->e->k->s->a\n       list2 = g->e->e->k->s->b\nOutput: -1\n\nInput: list1 = g->e->e->k->s->a\n       list2 = g->e->e->k->s\nOutput: 1\n\nInput: list1 = g->e->e->k->s\n       list2 = g->e->e->k->s\nOutput: 0"
         },
         {
             "id": 8,
             "title": "Write a HTML table tag sequence that outputs the following",
             "language": "html",
             "description": "<table>\n  <tr>\n    <td>50 pcs</td>\n    <td>100</td>\n    <td>500</td>\n  </tr>\n  <tr>\n    <td>10 pcs</td>\n    <td>5</td>\n    <td>50</td>\n  </tr>\n</table>",
-            "contents": "Write a HTML table tag sequence that outputs the following:\n\n50 pcs 100 500\n10 pcs 5 50\n\n\n\n<html>\n  <head>\n    <style>\n      body {\n        background-color: #1d2126;\n        color: white;\n      }\n    </style>\n  </head>\n  <body>\n    <h1>Hello, World</h1>\n  </body>\n</html>\n"
+            "contents": "Write a HTML table tag sequence that outputs the following:\n\n50 pcs 100 500\n10 pcs 5 50\n\n\n\n<html>\n"
         },
         {
             "id": 9,
             "title": "Explain meta tags in HTML",
             "language": "html",
             "description": "Meta tags always go inside head tag of the HTML page\nMeta tags is always passed as name/value pairs\nMeta tags are not displayed on the page but intended for the browser\nMeta tags can contain information about character encoding, description, title of the document etc,",
-            "contents": "Explain meta tags in HTML :\n\n<!DOCTYPE html>\n<html>\n<head>\n  <meta name=\"\" content=\"\"> \n  <title>Home Page</title>\n</head>\n<body>\n\n</body>\n</html>"
+            "contents": "Explain meta tags in HTML"
         },
         {
             "id": 10,
             "title": "Tell me about yourself",
             "language": "plaintext",
-            "description": null,
+            "description": "Just be be yourself.",
             "contents": "Who are you?"
         },
         {
@@ -74,7 +74,7 @@
             "title": "What is the difference between span and div?",
             "language": "html",
             "description": "div is a block element\nspan is inline element",
-            "contents": "What is the difference between span and div?\n\n\nFor bonus points, you could point out that it’s illegal to place a block element inside an inline element, and that while div can have a p tag, and a p tag can have a span, it is not possible for span to have a div or p tag inside.\n\n\n\n<html>\n  <head>\n    <style>\n      body {\n        background-color: #1d2126;\n        color: white;\n      }\n    </style>\n  </head>\n  <body>\n    <h1>Hello, World</h1>\n  </body>\n</html>\n"
+            "contents": "What is the difference between span and div?\n\n\nFor bonus points, you could point out that it’s illegal to place a block element inside an inline element, and that while div can have a p tag, and a p tag can have a span, it is not possible for span to have a div or p tag inside."
         },
         {
             "id": 12,
